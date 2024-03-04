@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+
+        .black.active-1 {
+            top: 70px;
+            width: 100%;
+            z-index: 99;
+        }
+
+        .hdn-sign.active {
+            display: block;
+        }
+
+        .triangle.active {
+            display: block;
+        }
+
+        .hdn-sign {
+            position: absolute;
+            z-index: 101;
+            transition: all 2s;
+            width: 500px;
+            height: 375px;
+            top: 10px;
+            right: -164px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .hdn-table {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+
+        .hdn-table h3 {
+            font-size: 17px;
+            padding: 10px 0;
+        }
+
+        .hdn-table li {
+            color: rgb(84, 84, 84);
+            font-size: 13px;
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+        .hdn-line {
+            width: 0.5px;
+            color: black;
+            background-color: rgb(100, 100, 100);
+            height: 340px;
+        }
+
+        .navbar {
+            height: 68px;
+            background-color: #0f1111;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .nav-logo {
+            height: 58px;
+            width: 100px;
+        }
+
+        .logo {
+            background-image: url("amazon_logo.png");
+            background-size: cover;
+            height: 50px;
+            width: 100%;
+        }
+
+        .border {
+            border: 1.5px solid transparent;
+        }
+
+        .border:hover {
+            border: 1.5px solid white;
+        }
+
+        .address {
+            color: #cccccc;
+            font-size: 0.85rem;
+            margin-left: 15px;
+        }
+
+        .fa-solid {
+            font-size: 1.4rem;
+        }
+
+        .cart {
+            font-size: 1rem;
+        }
+
+        .india {
+            font-size: 1rem;
+            margin: 3px;
+        }
+
+        .add-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .nav-search {
+            display: flex;
+            background-color: pink;
+            justify-content: space-evenly;
+            width: 620px;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+
+        .nav-search:hover {
+            border: 2px solid orange;
+
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            width: 50px;
+            text-align: center;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border: none;
+        }
+
+        .search-input {
+            width: 100%;
+            font-size: 1rem;
+            border: none;
+
+        }
+
+        .search-icon {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            background-color: rgb(241, 191, 23);
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            color: #0f1111;
+        }
+
+        .ayush {
+            font-size: 12px;
+        }
+
+        .account {
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #0f1111;
+        }
+
+        span {
+            font-size: 12px;
+
+        }
+
+        .nav-second {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .panel {
+            height: 40px;
+            background-color: #222f32;
+            display: flex;
+            color: #f3f3f3;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .panel-ops p {
+            display: inline;
+            margin-left: 15px;
+
+        }
+
+        .panel-ops {
+            width: 70%;
+            font-size: 0.85rem;
+        }
+
+
+        .panel-deals {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .clothing-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: #e2e7e6;
+            text-align: center;
+        }
+
+
+        .box {
+            height: 600px;
+            width: 23%;
+            background-color: white;
+            padding: 20px 0px 15px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .box-img {
+            height: 300px;
+            background-size: cover;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .box-content {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .see {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box-content p {
+            color: #007185;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-logo border">
+            <div class="logo"></div>
+        </div>
+
+        <div class="nav-address border">
+            <p class="address">Deliver to </p>
+            <div class="add-icon">
+                <i class="fa-solid fa-location-pin"></i>
+                <p class="india">India</p>
+            </div>
+
+        </div>
+
+        <div class="nav-search">
+            <select class="search-select">
+                <option>All</option>
+            </select>
+            <input placeholder="Search Amazon" class="search-input" autocomplete="off">
+
+            <button class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+
+        </div>
+
+
+        <div class="nav-single border ac">
+            <p><span>Hello Ayush, sign in</span></p>
+            <p class="nav-second">Account & List</p>
+        </div>
+
+        <div class="nav-single border">
+            <p><span>Returns</span></p>
+            <p class="nav-seconnd"> & Orders</p>
+        </div>
+        <div class="cart border">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+        </div>
+    </div>
+
+    <div class="panel ">
+        <div class="panel-all border">
+            <i class="fa-solid fa-bars "></i>
+            All
+        </div>
+        <div class="panel-ops ">
+            <p>Fresh</p>
+            <p>Home Inprovement</p>
+            <p>Electronics</p>
+            <p>Mobiles</p>
+            <p>Amazon miniTV</p>
+            <p>Sell</p>
+        </div>
+        <div class="panel-deals border">
+            Shop deals in Electronics
+        </div>
+
+    </div>
+
+    <div class="clothing-section">
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('HEALTH1.jpg')"></div>
+                <div class="see">
+                    <h2>Healthyr-U Eye & Vision Care | Astaxanthin, Lutein</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('health2.jpg')"></div>
+                <div class="see">
+                    <h2>WOW Life Science Omega 3 | Daily Strength Fish Oil Capsules For Men & Women</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('health3.jpg')"></div>
+                <div class="see">
+                    <h2>Venus (India) Electronic Digital Personal Bathroom Health Body Weight Weighing</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('health4.jpg')"></div>
+                <div class="see">
+                    <h2>Amazon's Choice Poy Sian Pim-saen Balm Oil Aroma Refresh Inhalant Gel Health & Personal Care
+                        Products Thai</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('health6.jpg')"></div>
+                <div class="see">
+                    <h2>Selpak Super Soft Toilet Paper - 140 Sheets x 3 Ply, Pack of 14+4 Rolls</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#" class="add">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('health5.jpg')"></div>
+                <div class="see">
+                    <h2>ZEROHARM Vegan Omega (EPA+DHA) | Supplement for men, women, and kid</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('cart8.jpg')"></div>
+                <div class="see">
+                    <h2>ZEROHARM Vegan Omega 3 Capsules for Men, Women, Kid (60 Capsule)-</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-img" style="background-image: url('cart5.jpg')"></div>
+                <div class="see">
+                    <h2>GVC Iron Analogue Personal Health Check Up Fitness Weighing Scale</h2>
+                </div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br>
+                <div class="price"><sup>$</sup>190</div>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
